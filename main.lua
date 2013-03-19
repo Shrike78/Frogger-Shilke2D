@@ -24,11 +24,11 @@ show_player_bbox = false
 
 function setup()
 	
-    starling = Starling.current
-    juggler = starling.juggler
-    stage = starling.stage
-    log = starling.log
-    --starling:showStats(true)    
+    shilke2d = Shilke2D.current
+    juggler = shilke2d.juggler
+    stage = shilke2d.stage
+    log = shilke2d.log
+    --shilke2d:showStats(true)    
     _game = FrogGame()
     stage:addChild(_game)
     
@@ -47,5 +47,5 @@ function onDirectDraw()
 	table.clear(postDrawList)
 end
 
-starling = Starling(WIDTH,HEIGHT,FPS,SCALEX,SCALEY,SAMPLERATE)
-starling:start()
+shilke2d = Shilke2D(WIDTH,HEIGHT,FPS,SCALEX,SCALEY,SAMPLERATE)
+shilke2d:start()
