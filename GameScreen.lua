@@ -131,7 +131,7 @@ function GameScreen:update(dt)
         if self._tiers[self._player.tierIndex]:checkCollision(
                 self._player) then
             --if tiers with vehicles, and colliding with vehicle
-            if self._player.tierIndex < 6 then
+            if self._player.tierIndex < 7 then
                 --_game.sounds.play(Sounds.SOUND_HIT);
 				self._game.sounds[Sounds.SOUND_HIT]:play()
                 --if not colliding with anything in the water tiers, 
