@@ -34,10 +34,11 @@ function Turtle:update(dt)
             self.skin:setTexture(Turtle.TEXTURE_3)
         elseif self._animationCnt == 130 then
             self:hide()
-            self.skin:setTexture(Turtle.TEXTURE_2)
         elseif self._animationCnt == 155 then          
             self:show()
         elseif self._animationCnt == 185 then
+			self.skin:setTexture(Turtle.TEXTURE_2)
+        elseif self._animationCnt == 210 then
             self.skin:setTexture(Turtle.TEXTURE_1)
             self._animationCnt = 0
         end
@@ -50,8 +51,8 @@ function Turtle:update(dt)
 end
 
 function Turtle:getBounds()
-    if not self.skin:isVisible() or 
-            self.skin.texture == Turtle.TEXTURE_3 then
+    if not self.skin:isVisible()--[[ or 
+            self.skin.texture == Turtle.TEXTURE_3 --]] then
         return nil
     end
     
