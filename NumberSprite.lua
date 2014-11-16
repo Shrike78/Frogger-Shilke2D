@@ -15,15 +15,14 @@ function NumberSprite:init(game,x,y,nameRoot)
             self._game.imageCache:getTexture(nameRoot..i .. ".png"))
     end
             
-    self.empty = Texture.empty(self._textures[1].width,
-        self._textures[1].height)
+    self.empty = Texture.empty(self._textures[1]:getSize())
             
    -- self.y = self.y - self.empty.height * 0.5
                       
     local img
     for i = 0,8 do
         img = Image(self.empty)
-        img:setPositionX(self.x + i * (self.empty.width + 2))
+        img:setPositionX(self.x + i * (self.empty:getWidth() + 2))
         img:setPositionY(self.y)
         table.insert(self._numbers,img)
         --self._game:getScreen():addChild(img)

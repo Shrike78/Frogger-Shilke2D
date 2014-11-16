@@ -51,6 +51,8 @@ function Tier:refresh()
     end
 end
 
+local __helperRect = Rect()
+
 function Tier:checkCollision(player)
 
     local collision = false
@@ -61,7 +63,7 @@ function Tier:checkCollision(player)
         local elemBounds = element:getBounds()
         if elemBounds ~= nil then          
             --check intersects
-            if (elemBounds:intersection(player_rec).w > 
+            if (elemBounds:intersection(player_rec,__helperRect).w > 
                     player.skin:getWidth()*0.3) then
                 collision = true
                 break

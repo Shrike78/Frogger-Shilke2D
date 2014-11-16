@@ -9,6 +9,8 @@ function FinalTier:init(game,index)
 end
 
 
+local __helperRect = Rect()
+
 function FinalTier:checkCollision(player)
 
             
@@ -23,7 +25,7 @@ function FinalTier:checkCollision(player)
         sprite = self._targets[i]
         if sprite:getBounds() then
             --check intersects
-            if sprite:getBounds():intersection(player_rec).w >
+            if sprite:getBounds():intersection(player_rec,__helperRect).w >
                     player.skin:getWidth() * 0.3 then
                 collision = true
                 collidingWith = sprite
