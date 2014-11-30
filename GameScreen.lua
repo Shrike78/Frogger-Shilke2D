@@ -115,6 +115,27 @@ function GameScreen:createScreen()
 end
 
 function GameScreen:update(dt)
+	
+	--on desktop uses wasd to move the frog
+	if Shilke2D.isDesktop() then
+		if not self._player.moveTimer.running then
+			if Shilke2D.isKeyPressed('a') then
+				self._player:moveFrogLeft()
+				self._player.moveTimer:restart()
+			elseif Shilke2D.isKeyPressed('d') then
+				self._player:moveFrogRight()
+				self._player.moveTimer:restart()
+			elseif Shilke2D.isKeyPressed('w') then
+				self._player:moveFrogUp()
+				self._player.moveTimer:restart()
+			elseif Shilke2D.isKeyPressed('s') then
+				self._player:moveFrogDown()
+				self._player.moveTimer:restart()
+			end			
+		end
+	end
+	
+	
     --update frog and bonus frog
     for _,elem in ipairs(self._dynamicElements) do
         elem:update(dt)
